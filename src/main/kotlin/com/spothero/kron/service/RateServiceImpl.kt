@@ -47,7 +47,6 @@ class RateServiceImpl(private val rateDAO: RateDAO) : RateService {
             } else {
                 rateDAO.save(rateEntity)
             }
-
         }
     }
 

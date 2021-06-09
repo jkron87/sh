@@ -4,6 +4,8 @@ import com.spothero.kron.api.ApiRate
 import com.spothero.kron.api.convertToApiResponse
 import com.spothero.kron.service.RateService
 import io.swagger.annotations.Api
+import io.swagger.annotations.ApiResponse
+import io.swagger.annotations.ApiResponses
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -18,6 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody
 @RequestMapping("/api/rates")
 @ResponseBody
 @Api("Rates for parking")
+@ApiResponses(
+        ApiResponse(code = 400, message = "unavailable"),
+)
 class RatesController(private val rateService: RateService) {
 
     @GetMapping
