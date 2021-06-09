@@ -1,7 +1,5 @@
 package com.spothero.kron.repository
 
-import com.spothero.kron.entity.Day
-import com.spothero.kron.entity.DayDAO
 import com.spothero.kron.entity.Rate
 import com.spothero.kron.entity.RateDAO
 import org.springframework.data.repository.CrudRepository
@@ -17,4 +15,3 @@ import org.springframework.data.repository.CrudRepository
  * Allows addition of custom @Query annotations
  */
 interface RateRepository : CrudRepository<Rate, Long>, RateDAO
-interface DayRepository : CrudRepository<Day, Long>, DayDAO

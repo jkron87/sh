@@ -1,17 +1,14 @@
 package com.spothero.kron.entity
 
 import com.spothero.kron.util.toBase64String
-import java.time.LocalTime
+import java.time.Instant
 import java.time.ZoneId
 import java.time.ZoneOffset
 import java.time.ZonedDateTime
 import java.util.UUID
-import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
-import javax.persistence.ManyToMany
-import javax.persistence.OneToMany
 import javax.persistence.PrePersist
 import javax.persistence.PreUpdate
 
@@ -20,12 +17,13 @@ class Rate(
         @Id
         @Column(length = 24)
         var id: String? = null,
-        @ManyToMany
-        var days: MutableList<Day> = mutableListOf(),
-        val startTime: LocalTime,
-        val endTime: LocalTime,
+        val rateGroup: String,
+        @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
+        val startTime: Instant,
+        @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
+        val endTime: Instant,
         val timeZone: ZoneId,
-        val price: Long
+        var price: Long
 ) {
 
     var dateCreated: ZonedDateTime = ZonedDateTime.now(ZoneOffset.UTC)

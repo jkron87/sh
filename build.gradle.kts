@@ -26,6 +26,10 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation ("javax.inject:javax.inject:1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+	testImplementation("junit:junit:4.4")
+	implementation("io.springfox:springfox-swagger2:2.8.0")
+	implementation("io.springfox:springfox-swagger-ui:2.8.0")
 }
 
 
